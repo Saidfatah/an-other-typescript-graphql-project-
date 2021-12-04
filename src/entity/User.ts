@@ -1,7 +1,8 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import {Project} from './Project'
 
 @Entity()
-export class User extends BaseEntity {
+export class User {
 
     @PrimaryGeneratedColumn()
     id: number;
@@ -18,4 +19,6 @@ export class User extends BaseEntity {
     @Column({default:19})
     age?: number;
 
+    @OneToMany(() => Project, project => project.user)
+    projects: Project[];
 }

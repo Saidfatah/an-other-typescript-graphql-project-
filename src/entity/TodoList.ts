@@ -1,9 +1,9 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity,OneToMany,ManyToOne} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column,OneToMany,ManyToOne} from "typeorm";
 import {Todo} from './Todo'
 import {Project} from './Project'
 
 @Entity()
-export class TodoList extends BaseEntity {
+export class TodoList {
 
     @PrimaryGeneratedColumn()
     id: number;
